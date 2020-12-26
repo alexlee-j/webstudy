@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="father">
+        <a class="son">son</a>
+    </div>
+    <script>
+        var div = document.querySelector('.father');
+        var a = document.querySelector('.son');
+        div.addEventListener('click',function(){
+            alert(22);
+            
+        });
+        a.addEventListener('click',function(e){
+            alert(33);
+            e.stopPropagation();//dom推荐的标准 
+            e.cancelBubble = true;//非标准  
+        });
+    </script>
+    
+</body>
+</html>

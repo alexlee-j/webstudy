@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+</head>
+<body>
+    <button id="btnPOST">post请求数据</button>
+    <button id = 'btnGet'>发起带参数的请求</button>
+    <script>
+        $(function(){
+            $('#btnPOST').on('click',function(){
+                $.post('http://www.liulongbin.top:3006/api/addbook',{
+                    bookname:"咆哮营里的幸运儿",
+                    author:'布莱特.哈特',
+                    publisher:'长江文艺出版社'
+                },function(data){
+                    console.log(data);
+                })
+            });
+            $('#btnGet').on('click',function(){
+                $.get('http://www.liulongbin.top:3006/api/getbooks',function(data){
+                    console.log(data);
+                })
+            })
+        })
+    </script>
+</body>
+</html>

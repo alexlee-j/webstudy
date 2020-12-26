@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/template-web.js"></script>
+</head>
+<body>
+    <div id="container"></div>
+    
+    <script type="text/html" id='tpl-user'>
+        <h3>{{name}}</h3>
+        <div>{{@ test}}</div>
+        <div>
+            {{if flag === 0}}
+            flag的值为0
+            {{else if flag === 1}}
+            flag的值为1
+            {{/if}}
+        </div>
+        <div>
+            {{each hobby}}
+            <li>索引：{{$index}}循环项：{{$value}}</li>
+            {{/each}}
+        </div>
+        <h3>{{regtime | dateFormat}}</h3>
+
+    </script>
+
+    
+    <script>
+        template.defaults.imports.dateFormat = function(date){
+            var y = date.getFullYear();
+            var m = date.getMonth()+1;
+            var d = date.getDate();
+            return y +'-'+ m +'-'+ d
+        }
+        var data = {
+            name: '刘德华',
+            flag: 0,
+            test: '<h3>测试原文输出</h3>',
+            hobby: ['吃饭','睡觉','代码'],
+            regtime: new Date()
+        }
+        var htmlStr = template('tpl-user',data);
+        $('#container').html(htmlStr);
+    </script>
+</body>
+</html>

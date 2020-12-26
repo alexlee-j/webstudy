@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <ul>
+        <li>原先的li</li>
+    </ul>
+    <div class="test">我是原先的div</div>
+    <script>
+        $(function(){
+            var li = $('<li>我是后来的Li</li>');
+            var div = $('<div>我是后来的div</div>');
+            //$('ul').append(li);
+            $('ul').prepend(li);
+
+            // $(".test").after(div);
+            $(".test").before(div);
+            // 3. 删除元素
+             $("ul").remove();// 可以删除匹配的元素 自杀
+            // $("ul").empty(); // 可以删除匹配的元素里面的子节点 孩子
+            //$("ul").html(""); // 可以删除匹配的元素里面的子节点 孩子
+        })
+    </script>
+    
+</body>
+</html>

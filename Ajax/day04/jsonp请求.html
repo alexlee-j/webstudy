@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function success(data){
+            console.log("JSONP请求到了数据");
+            console.log(data);
+        }
+    </script>
+    <script src="js/getData.js?callback=success"></script>
+</body>
+</html>

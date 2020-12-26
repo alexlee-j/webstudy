@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div>1</div>
+    <div>2</div>
+    <div>3</div>
+    <script>
+        var arr = ['red','blue','pink'];
+        var sum = 0;
+        $(function(){
+            $('div').each(function(index,domele){
+                $(domele).css('color',arr[index]);
+                sum += parseInt($(domele).text());
+                
+            });
+            console.log(sum);
+            $.each({
+                name:'andy',
+                age:18
+            },function(i,ele){
+                console.log(i);
+                console.log(ele);
+            })
+        })
+    </script>
+</body>
+</html>

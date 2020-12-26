@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        (function(){//都是局部变量 独立的作用域
+            console.log(1);
+        })();
+
+        (function(a,b){
+            console.log(a+b);
+        }(1,2))
+    </script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function Star(uname,age){
+            this.uname = uname ;
+            this.age = age;
+
+        }
+        Star.prototype = {
+            constructor:Star,// 如果我们修改了原来的原型对象,给原型对象赋值的是一个对象,
+            //则必须手动的利用constructor指回原来的构造函数
+            id:function(){
+              console.log('我的名字是'+this.uname+'我的年龄是'+this.age);  
+            },
+            sing:function(){
+                console.log('我会唱歌');
+            }
+        }
+        var ldh = new Star('刘德华',18);
+        // console.log(ldh.__proto__);
+        // console.log(Star.prototype);
+        // console.log(ldh.__proto__.constructor);
+        // console.log(Star.prototype.constructor);
+        console.log(Star.prototype.__proto__);
+        
+        // 3. 我们Object.prototype原型对象里面的__proto__原型  指向为 null
+        console.log(Object.prototype.__proto__);
+    </script>
+</body>
+</html>

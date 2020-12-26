@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="lib/jquery.js"></script>
+    <style>
+        body,html{
+            margin: 0px;
+            padding: 0px;
+            overflow: hidden;
+        }
+        #angle{
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+    <img src="./angel.gif" alt="" id="angle">
+    <script>
+        $(function(){
+            var timer = null;
+            $(document).on('mousemove',function(e){
+                if(timer)return 
+                timer = setTimeout(function(){
+                    $("#angle").css('top',e.pageY+'px').css('left',e.pageX+'px');
+                    console.log('OK');
+                    timer = null;
+                },20)
+            
+         })
+        })
+         
+    </script>
+</body>
+</html>

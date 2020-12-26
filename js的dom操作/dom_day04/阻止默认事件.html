@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <a href="https://www.baidu.com">百度</a>
+    <script>
+        var a = document.querySelector('a');
+        a.addEventListener('click',function(e){
+            e.preventDefault();//dom标准写法
+        })
+        a.onclick = function(e){//传统注册方式
+            e.preventDefault();//普通浏览器      方法
+            e.returnValue;//低版本浏览器   ie678     属性
+            return flase;//也能阻止默认行为   没有兼容性问题    特点是return后面的代码不执行了，并且只限于传统的注册方式
+        }
+    </script>
+</body>
+</html>

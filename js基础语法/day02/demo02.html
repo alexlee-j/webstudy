@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>//数值转换成字符串型
+        var num= 10;
+        var str = num.toString();//第一种转换字符串
+        console.log(str);
+        console.log(String(num));//第二种String
+        console.log(num + '');//第三种隐式转换
+    </script>
+    <script>//字符转换成数值型
+        var age = prompt("请输入你的年龄");
+        console.log(parseInt(age));
+        console.log(parseInt('3.14'));//向下取整
+        console.log(parseInt('120px'));//会去掉px这个单位，因为不认识
+        console.log(parseInt('ren120px'));//NaN
+
+        console.log(parseFloat('3.14'));//转换成浮点型
+
+        console.log(Number('3.14'));//强制类型转换
+        
+        console.log('123' - 0);//利用隐式转换 - * /转换
+        
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

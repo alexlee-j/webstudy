@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>传统事件按钮</button>
+    <button>
+        监听事件按钮
+    </button>
+    <button>ie9attchEvent</button>
+    <script>
+        var buttons = document.querySelectorAll('button');
+        buttons[0].onclick = function(){
+            alert("??");//传统方法
+        }
+        buttons[1].addEventListener('click',function(){
+            alert(22);//推荐使用新方法
+        })
+        buttons[1].addEventListener('click',function(){
+            alert(33);
+        })
+        buttons[2].attachEvent('onclick',function(){
+            alert(22);//ie9以前的才支持  一般来说前两种方法就够用了
+        })
+    </script>
+    
+</body>
+</html>

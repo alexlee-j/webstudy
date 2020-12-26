@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div{
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+
+
+</head>
+<body>
+    <div></div>
+
+    <script>
+        var div = document.querySelector('div');
+        div.onclick = function(){
+           div.style.backgroundColor = 'red';
+           div.style.width = '300px';//生成的是css行内样式，css权重比较高
+
+        }
+    </script>
+
+    
+</body>
+</html>

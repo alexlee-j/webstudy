@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function isRunYear(year){
+            var flag = false;
+            if(year % 4 == 0 && year % 100 != 0 || year % 400 == 0){
+                flag = true;
+            }
+            return flag;
+
+           
+
+        }
+         
+         
+        function backDay(){
+            var year = prompt("请输入年份：");
+            if(isRunYear(year)){
+                alert("这是闰年，二月份有29天");
+            }else{
+                alert("这是平年，二月份有28天");
+            }
+        }
+        backDay();
+
+        f1();
+        console.log(c);
+        console.log(b);
+        console.log(a);
+        function f1(){
+            var a = b = c = 9;//相当于var a = 9; b = 9; c = 9;
+            //即var a;
+            //a = b = c = 9;
+            //也就是说a是局部变量，b、c是全局变量
+            console.log(c);
+            console.log(b);
+            console.log(a);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

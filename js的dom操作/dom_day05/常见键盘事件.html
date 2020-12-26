@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+          document.addEventListener('keyup', function() {//如果keyup动作为alert时  当keydown或者keypress其中有一个为alert时
+          //keyup的动作会被中断（貌似）
+            alert(33);
+        })
+        document.addEventListener('keydown',function(){//keydown 按键按下的时候触发  能识别功能键 比如 ctrl shift 左右箭头啊
+            console.log(22);
+        })
+        
+        document.addEventListener('keypress',function(){//keypress 按键按下的时候触发  不能识别功能键 比如 ctrl shift 左右箭头啊
+            console.log(44);
+        })
+       // 4. 三个事件的执行顺序  keydown -- keypress -- keyup
+    </script>
+
+    
+</body>
+</html>

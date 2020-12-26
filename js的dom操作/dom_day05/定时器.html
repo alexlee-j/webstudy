@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        setTimeout(function(){
+            console.log('时间到了');
+        },1000)//不写时间，那么将立即执行
+        function fn(){
+            alert('爆炸了');
+        }
+        var time1 = setTimeout(fn,3000);//给定时器取名  中间调用函数还可以用 'fn()'的方式  但不推荐
+    </script>
+</body>
+</html>

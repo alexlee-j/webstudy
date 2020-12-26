@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button>传统事件按钮</button>
+    <button>
+        监听事件按钮
+    </button>
+    <button>ie9attchEvent</button>
+    <script>
+        var buttons = document.querySelectorAll('button');
+        buttons[0].onclick = function(){
+            alert("22");
+            buttons[0].onclick = null;
+        }
+        buttons[1].addEventListener('click',fn);
+        function fn(){
+            alert(33);
+            buttons[1].removeEventListener('click',fn);//要指出删除的函数名
+        }
+       /*  buttons[2].attachEvent('onclick', fn1);
+        function fn1(){
+            alert(44);
+            buttons[2].detachEvent('onclick', fn1);
+        } */
+    </script>
+    
+</body>
+</html>

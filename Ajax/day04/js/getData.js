@@ -1,0 +1,1 @@
+success({name:'刘德华',age:18})

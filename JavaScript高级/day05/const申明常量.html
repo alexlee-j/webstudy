@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        if(true){
+            const arr = [1,2,3];
+            arr[0] = 100;//这样没有更改内存地址，可以进行更改复杂数据类型
+            //arr = [100,200,300];//这样直接赋值会更改地址，所以会报错
+            console.log(arr);
+        }
+    </script>
+</body>
+</html>

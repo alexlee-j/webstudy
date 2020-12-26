@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var a = 'afesfsegegewf';
+        var b = {};
+        for(i = 0;i<a.length;i++){
+            var c = a.charAt(i);
+            if(b[c]){//b[c]得到的是属性值
+                b[c]++;
+
+            }else{
+                b[c] = 1;
+
+            }
+
+        }
+        console.log(b);
+        var max = 0;
+        var ch = '';
+        for(var k in b){//k得到的是属性名
+            if(b[k]>max){//b[k]得到的是属性值
+                max = b[k];
+                ch = k;
+            }
+        }
+        
+        console.log(max);
+        console.log('最多的字符是'+ch);
+
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

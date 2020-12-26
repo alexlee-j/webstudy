@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            width: 100%;
+            height: 3000px;
+        }
+    </style>
+</head>
+<body>
+    <script>
+        document.addEventListener('click',function(e){
+            console.log(e.clientX);//距离浏览器的位置
+            console.log(e.clientY);
+            console.log(e.pageX);//距离文档页面的位置坐标   ie9+支持
+            console.log(e.pageY);
+            console.log(e.screenX);//距离电脑屏幕的位置
+            console.log(e.screenY);
+        });
+    </script>
+    
+</body>
+</html>

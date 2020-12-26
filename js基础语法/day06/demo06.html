@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>//有大问题
+        
+        var demo01 = function add(arr){
+            
+            var temp = arr[0] - 0;
+            for(var i = 1;i<arr.length;i++){
+                
+                    temp = temp + (arr[i] - 0);
+            }
+            return temp;
+
+        }
+        var demo02 = function sub(arr){
+            var temp = arr[0] - 0;
+            for(var i = 1;i<arr.length;i++){
+                    temp -= (arr[i] - 0);
+            }
+            return temp;
+
+        }
+        var demo03 = function cheng(arr){
+            var temp = arr[0] - 0;
+            for(var i = 1;i<arr.length;i++){
+                    temp = temp * (arr[i] - 0);
+            }
+            return temp;
+
+        }
+        var demo04 = function chu(arr){
+            var temp = arr[0] - 0;
+            for(var i = 0;i<arr.length;i++){
+                    temp = temp / (arr[i] - 0);
+            }
+            return temp;
+
+        }
+        var num = prompt("欢迎使用简易计算器：\n1.加法运算;\n2.减法运算;\n3.乘法运算;\n4.除法运算;\n5.退出;\n输入的数组请使用空格隔开，如a b c d");
+        var str = prompt("请输入数组");
+        var arr=str.split(" ");
+
+        switch(Number(num)){
+            case 1:
+            alert(demo01(arr));
+            break;
+            case 2:
+            alert(demo02(arr));
+            break;
+            case 3:
+            alert(demo03(arr));
+            break;
+            case 4:
+            alert(demo04(arr));
+            break;
+            case 5:
+            break;
+
+
+        }
+
+
+
+        /* var str=prompt("判断一组数据的大小。<br>请输入一组数，用‘-’分隔",);
+    var arr=str.split("-");
+    document.write("输入的一组数为："+arr);
+
+    //方法一
+    for (var i=0;i<arr.length;i++) {
+        for (var j=0;j<arr.length;j++){
+            if (arr[j]>arr[i]){
+                temp=arr[i];
+                arr[i]=arr[j];
+                arr[j]=temp;
+            }
+        }
+    }
+    document.write("<br>从小到大排序："+arr,"<br>方法一最大值为："+arr[arr.length-1]); */
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

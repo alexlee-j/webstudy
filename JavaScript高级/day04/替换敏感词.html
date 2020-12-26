@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <textarea name="" id="message"></textarea> <button>提交</button>
+    <div></div>
+    <script>
+        var message = document.querySelector('#message');
+        var button = document.querySelector('button');
+        var div = document.querySelector('div');
+        button.onclick = function(){
+            div.innerHTML = message.value.replace(/傻逼|哈麻批|bitch/gi,'**');
+        }
+    </script>
+</body>
+</html>

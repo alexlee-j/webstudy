@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+        <button>显示当前时间</button>
+        <div>时间</div>
+        <p></p>
+        <script>
+            var btn = document.querySelector("button");
+            var div = document.querySelector('div');
+            btn.onclick = function(){
+
+                div.innerText = getDate();
+            }
+            function getDate(){
+                var date = new Date();
+                //我们写一个2019年 5月1日星期三
+                var year = date.getFullYear();
+                var month = date.getMonth() + 1;
+                var dates = date.getDate();
+                var arr =['星期日','星期一','星期二','星期三','星期四','星期五','星期六'];
+                var day = date.getDay();
+                return '今天是: ' + year + '年'+ month + '月'+ dates +'日' + arr[day];
+            }
+            var p = document.querySelector('p');
+            p.innerText = getDate();
+/* 
+            // innerText和innerHTML的区别
+            // 1. innerText不识别html标签非标准去除空格和换行
+            var div = document.queryselector('div');
+            // div.innerText ='<strong>今天是:</strong> 2019';
+            // 2. innerHTML 识别htm1标签w3C标准保留空格和换行的
+            div.innerHTML = '<strong>今天是:</strong>2019';
+            //这两个属性是可读写的可以获取元素里面的内容
+            var p = document.querySelector('p');
+            console.log(p.innerText);
+            console.log(p.innerHTML); */
+
+
+        </script>
+    
+</body>
+</html>

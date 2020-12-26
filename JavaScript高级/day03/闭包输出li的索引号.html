@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>jkh</li>
+        <li>we</li>
+        <li>ew</li>
+        <li>sdg</li>
+    </ul>
+    <script>
+        var lis = document.querySelector('ul').querySelectorAll('li');
+        // for(var i = 0;i<lis.length;i++){
+        //     lis[i].index = i;
+        //     lis[i].onclick = function(){
+                
+        //         console.log(this.index);
+        //     }
+        // }
+        for(var i = 0;i<lis.length;i++){
+            (function(i){
+                lis[i].onclick = function(){
+                    console.log(i);
+                }
+                
+            })(i);
+        }
+    </script>
+</body>
+</html>

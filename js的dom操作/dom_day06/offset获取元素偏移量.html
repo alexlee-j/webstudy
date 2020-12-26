@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            margin-left: 100px;
+            margin-top: 100px;
+            background-color: blue;
+        }
+        .son{
+
+            width: 100px;
+            height: 100px;
+            padding: 20px;
+            margin-top: 50px;
+            margin-left: 50px;
+            background-color:red;
+        }
+    </style>
+</head>
+<body>
+    <div class="father">
+        <div class="son"></div>
+    </div>
+    <script>
+        var father = document.querySelector('.father');
+        var son = document.querySelector('.son');
+        console.log(father.offsetTop); 
+        console.log(son.offsetTop);//如果son没有父亲或者父亲没有相对定位,那么 以body为准
+        console.log(son.offsetWidth);//获得元素的大小 宽度和高度   包含padding+border+width
+        console.log(son.offsetHeight);
+
+        console.log(son.offsetParent);//返回带有定位的父亲 否则返回body
+        console.log(son.parentNode);//返回的是最近的父亲节点
+    </script>
+</body>
+</html>

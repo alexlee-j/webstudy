@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+</head>
+<body>
+    <div class="yeye">
+        <div class="father">
+            <div class="son">儿子</div>
+        </div>
+    </div>
+
+    <div class="nav">
+        <p>我是屁</p>
+        <div>
+            <p>我是p</p>
+        </div>
+    </div>
+    <script>
+        $(function(){
+            console.log($('.son').parent());
+            $('.nav').children('p').css('color','red');
+            $(".nav").find("p").css("color", "red");
+            // (1) 我们可以利用选择器的方式选择
+            // $("ul li:eq(2)").css("color", "blue");
+            // $("ul li:eq("+index+")").css("color", "blue");
+            // (2) 我们可以利用选择方法的方式选择 更推荐这种写法
+            // $("ul li").eq(2).css("color", "blue");
+            // $("ul li").eq(index).css("color", "blue");
+             // 3. 判断是否有某个类名
+            console.log($("div:first").hasClass("current"));
+            console.log($("div:last").hasClass("current"));
+        })
+    </script>
+</body>
+</html>
