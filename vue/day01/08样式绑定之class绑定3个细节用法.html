@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>docment</title>
+		<style type="text/css">
+			.active{
+				width: 200px;
+				height: 200px;
+				border: 1px solid pink;
+			}
+			.error{
+				background-color: orange;
+			}
+			.test{
+				color: purple;
+			}
+			.textCenter{
+				text-align: center;
+				display:table-cell;
+				vertical-align: middle;
+			}
+			.size{
+				font-size: 28px;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div v-bind:class="[isActiveClass,isErrorClass,arrClasses]">
+				内容
+			</div>
+			<div v-bind:class="[isActiveClass,isErrorClass,{test:isText},arrClasses]">
+				内容
+			</div>
+			<div v-bind:class="[arrClass,arrClasses]">
+				内容
+			</div>
+			<div v-bind:class="arrClasses1" class="size">
+				内容
+			</div>
+			<button type="button" @click="change">切换</button>
+		</div>
+		<script src="./js/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					isActiveClass:'active',
+					isErrorClass:'error',
+					isText:true,
+					arrClass:{
+						active:true,
+						error:true,
+						test:false
+					},
+					arrClasses:{
+						textCenter:true
+					},arrClasses1:['active','error','textCenter']
+				},
+				methods:{
+					change:function(){
+						this.isActiveClass = '';
+						this.isErrorClass = '';
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

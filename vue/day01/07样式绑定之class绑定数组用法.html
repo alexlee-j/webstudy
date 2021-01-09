@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>docment</title>
+		<style type="text/css">
+			.active{
+				width: 200px;
+				height: 200px;
+				border: 1px solid pink;
+			}
+			.error{
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="app">
+			<div v-bind:class="[isActiveClass,isErrorClass]">
+				内容
+			</div>
+			<button type="button" @click="change">切换</button>
+		</div>
+		<script src="./js/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					isActiveClass:'active',
+					isErrorClass:'error',
+				},
+				methods:{
+					change:function(){
+						this.isActiveClass = '';
+						this.isErrorClass = '';
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

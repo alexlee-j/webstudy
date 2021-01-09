@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-focus=''/>
+			<input type="text" v-color='msg'/>
+			<input type="text" v-color='{color:"orange"}'/>
+			<input type="text" v-handler1/>
+		</div>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			Vue.directive('focus',{
+				inserted:function(el){
+					el.focus()
+				}
+			})
+			Vue.directive('color',{
+				bind:function(el,binding){
+					el.style.backgroundColor = binding.value.color;
+				}
+			})
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					msg:{
+						color:'pink'
+					}
+					
+				},
+				directives:{
+					handler1:{
+						bind:function(el,binding){
+							el.style.fontSize = '20px'
+						}
+					}
+				}
+				
+			})
+		</script>
+	</body>
+</html>

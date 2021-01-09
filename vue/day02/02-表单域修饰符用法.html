@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<input type="text" v-model.number="num" />
+			<input type="text" v-model.trim="String1" />
+			<input type="text" v-model.lazy="String2" />
+			<span >
+				{{String1}}
+			</span>
+			<span >
+				{{String2}}
+			</span>
+			<button type="button" @click="handler">计算</button>
+		</div>
+		<script src="./js/vue.js" type="text/javascript" charset="utf-8"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					num:'',
+					String1:'',
+					String2:''
+					
+				},
+				methods:{
+					handler:function(){
+						console.log(this.num + 13);
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

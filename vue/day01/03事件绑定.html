@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <form action="">
+            <div>
+                用户名：
+                <input type="text" @keyup.delete='clear' v-model='uname'>
+                <input type="text" @keyup.aaaa='clear' v-model='uname'>
+            </div>
+            <div>
+                密&nbsp;&nbsp;&nbsp;码：
+                <input type="text" @keyup.enter='fun1' v-model='pwd'>
+            </div>
+            <div>
+                <input type="button" @click='fun1' value="提交">
+            </div>
+        </form>
+
+    </div>
+
+    <script type="text/javascript" src="./js/vue.js"></script>
+    <script type="text/javascript">
+        Vue.config.keyCodes.aaaa = 65;
+        var vm = new Vue({
+            el:'#app',
+            data:{
+                uname:'',
+                pwd:''
+            },
+            methods:{
+                fun1:function(){
+                    console.log(this.uname,this.pwd);
+                },
+                clear:function(){
+                    this.uname= ''
+                }
+                    
+
+            }
+        })
+    </script>
+	
+</body>
+</html>

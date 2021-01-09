@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+	</head>
+	<body>
+		<div id="app">
+			<div v-bind:style="[active]" v-if="score>90">
+				内容
+			</div>
+			<div v-bind:style="[active]" v-show="flag">
+				内容
+			</div>
+			<div v-bind:style="{width:widthStyle,height:heightStyle,border:borderStyle}">
+				内容
+			</div>
+		</div>
+		
+		<script src="./js/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					widthStyle:'100px',
+					heightStyle:'200px',
+					borderStyle: '1px solid blue',
+					score:100,
+					flag:false,
+					active:{
+						width: '200px',
+						height: '200px',
+						border: '1px solid pink'
+					},
+				},
+				methods:{
+					change:function(){
+						this.active = '';
+					}
+				}
+			})
+		</script>
+	</body>
+</html>

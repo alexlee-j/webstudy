@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<div id="app">
+			<h1>简单计算器</h1>
+			<span>数值:A</span>
+			<span><input type="text" v-model="a"/></span><br>
+			<span>数值:B</span>
+			<span><input type="text" v-model="b" @keyup.enter="fun1"/></span><br>
+			<button type="button" @click="fun1" >计算</button>
+			<span>结果：</span>
+			<span v-text="result"></span>
+		</div>
+		<script src="./js/vue.js"></script>
+		<script type="text/javascript">
+			var vm = new Vue({
+				el:'#app',
+				data:{
+					a:'',
+					b:'',
+					result:''
+				},
+				methods:{
+					
+				fun1: function(){
+					this.result = parseInt(this.a)+parseInt(this.b)
+				},
+				}
+			})
+		</script>
+	</body>
+
+</html>
