@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+		<alert-text>
+			<p slot='header'>头部</p>
+			<p>主要内容</p>
+			<p>主要内容</p>
+			<p slot='footer'>尾部</p>
+		</alert-text>
+		<alert-text>
+			<template slot='header'><p> 头部</p><p> 头部</p></template><!-- 临时性包裹标签，用于向插槽中添加多个标签 -->
+			<template><p>主要内容</p>
+			<p>主要内容</p></template>
+			<template slot='footer'><p>尾部</p></template>
+			
+		</alert-text>
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+		Vue.component('alert-text',{
+			template:`
+				<div>
+					<header>
+						<slot name='header'></slot>
+					</header>
+					<main>
+						<slot></slot>
+					</main>
+					<footer>
+						<slot name='footer'></slot>
+					</footer>
+				</div>
+			`,
+		})
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+
+            }
+        })
+    </script>
+</body>
+</html>
