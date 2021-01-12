@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+		<child content='hello world'></child>
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+		Vue.component('child',{
+			props:{
+				content:{
+					type:[String,Number],
+					// required:false,
+					// default:'defalut string',
+					validator:function(value){
+						return (value.length > 5)
+					}
+				}
+
+			},
+				template:`
+				<div>{{content}}</div>
+				`
+		})
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+
+            }
+        })
+    </script>
+</body>
+</html>

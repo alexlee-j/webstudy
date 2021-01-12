@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<script src="js/velocity.min.js" type="text/javascript" charset="utf-8"></script>
+	
+</head>
+<body>
+    <div id="app">
+		<!-- <transition
+		@before-enter="handleBeforEnter"
+		@enter="handleEnter"
+		@after-enter="handleAfterEnter"
+		@after-leave="='handleAfterLeave"
+		> -->
+		<transition
+		@before-enter="handleBeforEnter"
+		@enter="handleEnter"
+		@after-enter="handleAfterEnter">
+			<div v-if='show'>hello world</div>
+		</transition>
+		<button type="button" @click='handle'>切换</button>
+		
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+    //     var vm = new Vue({
+    //         el:'#app',
+    //         data:{
+				// show:true
+    //         },
+    //         methods:{
+				// handle:function(){
+				// 	this.show = !this.show;
+				// },
+				// handleBeforEnter:function(el){
+				// 	el.style.color = 'red';
+				// },
+				// handleEnter:function(el,done){
+				// 	setTimeout(function(){
+				// 		el.style.color = 'green'
+				// 	},2000)
+				// 	setTimeout(function(){
+						
+				// 		done()
+				// 	},4000)
+				// },
+				// handleAfterEnter:function(el){
+				// 	el.style.color = 'black'
+				// }
+    //         }
+    //     })
+			var vm = new Vue({
+	        el:'#app',
+	        data:{
+				show:true
+	        },
+	        methods:{
+				handle:function(){
+					this.show = !this.show;
+				},
+				handleBeforEnter:function(el){
+					el.style.opacity = 0;
+				},
+				handleEnter:function(el,done){
+					Velocity(el,{
+						opacity:1
+					},{
+						duration:1000,
+						complate:done
+					})
+				},
+				handleAfterEnter:function(el){
+					alert("动画结束")
+				}
+	        }
+	    })
+    </script>
+</body>
+</html>

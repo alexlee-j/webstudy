@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+		<clickevent @click.native='handle'></clickevent><!-- 不使用子组件传递的事件，使用原生事件 -->
+		<!-- <child @clickhandle='handle'></child><!-- 自定义的事件 --> 
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+		Vue.component('clickevent',{
+			template:`
+			<div>click</div>
+			`
+		})
+		// Vue.component('child',{
+		// 	template:`
+		// 	<div @click='clickhandle'>click</div>
+		// 	`,
+		// 	methods:{
+		// 		clickhandle:function(){
+		// 			 this.$emit('clickhandle')//向父组件中传递事件
+		// 		}
+		// 	}
+		// })
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+				handle:function(){
+					alert('点击了')
+				}
+            }
+        })
+    </script>
+</body>
+</html>

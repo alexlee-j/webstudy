@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+	<style type="text/css">
+		/* .v-enter,
+		.v-leave-to{
+			opacity: 0;
+		}
+		.v-enter-active{
+			transition: opacity 1s;
+		}
+		.v-leave-active{
+			transition: opacity 1s;
+		} */
+		@keyframes bounce-in{
+			0%{
+				transform: scale(0);
+			}
+			50%{
+				transform: scale(1.5);
+			}
+			100%{
+				transform: scale(1);
+			}
+		}
+		.v-enter-active{
+			transform-origin: left center;
+			animation: bounce-in 1s;
+		}
+		.v-leave-active{
+			transform-origin: left center;
+			animation: bounce-in 1s reverse;
+		}
+	</style>
+</head>
+<body>
+    <div id="app">
+		<transition>
+			<div v-if='show'>hello world</div>
+		</transition>
+		<button type="button" @click='handle'>切换</button>
+		
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+        var vm = new Vue({
+            el:'#app',
+            data:{
+				show:true
+            },
+            methods:{
+				handle:function(){
+					this.show = !this.show;
+				}
+            }
+        })
+    </script>
+</body>
+</html>

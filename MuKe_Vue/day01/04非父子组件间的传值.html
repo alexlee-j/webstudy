@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+		<child content='dell'></child>
+		<child content='lee'></child>
+    </div>
+    <script type="text/javascript" src="js/vue.js"></script>
+    <script type="text/javascript">
+		Vue.prototype.bus = new Vue();
+		Vue.component('child',{
+			data:function(){
+				 return {
+					 selfcontent:this.content
+				 }
+			},
+			props:{
+				content:String
+			},
+			
+			template:`
+			<div @click='handle'>{{selfcontent}}</div>
+			`,
+			methods:{
+				handle:function(){
+					this.bus.$emit('change',this.selfcontent)
+				}
+			},
+			mounted:function(){
+				 this.bus.$on('change',(msg)=>{
+					 this.selfcontent = msg;
+				 })
+			}
+			
+		})
+        var vm = new Vue({
+            el:'#app',
+            data:{
+
+            },
+            methods:{
+
+            }
+        })
+    </script>
+</body>
+</html>
